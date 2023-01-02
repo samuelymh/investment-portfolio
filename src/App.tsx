@@ -88,7 +88,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <Layout style={{ minHeight: '100vh' }} className="select-none">
+    <Layout style={{ minHeight: '100vh'}} className="select-none">
       <Sider 
         collapsible collapsed={collapsed} 
         onCollapse={(value) => setCollapsed(value)}
