@@ -107,7 +107,10 @@ const App: React.FC = () => {
         />
       </Sider>
 
-      <Layout className="site-layout select-none">
+      <Layout 
+        className="site-layout select-none"
+        onClick={() => { if (!collapsed) setCollapsed(true) }}
+      >
         {/* Start of header */}
         <Header style={styleHeader} >
           Portfolio Tracker ©2023 Created by Frederick Jorge
