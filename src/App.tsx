@@ -9,6 +9,10 @@ import {
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
 
+import Dashboard from './Components/Dashboard/Dashboard';
+import Analytics from './Components/Analytics/Analytics';
+import Transactions from './Components/Transactions/Transactions';
+
 const { Header, Content, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
@@ -33,8 +37,23 @@ const items: MenuItem[] = [
   getItem('Transactions', '3', <WalletOutlined />),
 ];
 
+const MainContent: React.FC< { selectedPage: string } > = ({ selectedPage }) => {
+  console.log(selectedPage);
+  switch (selectedPage) {
+    case '1':
+      return <Dashboard />;
+    case '2':
+      return <Analytics />;
+    case '3':
+      return <Transactions />;
+    default:
+      return <Dashboard />;
+  }
+}
+
 const App: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [selectedPage, setSelectedPage] = useState('1');
 
   // Sider style to prevent it from scrolling with the content.
   const styleSider: React.CSSProperties = {
@@ -58,14 +77,18 @@ const App: React.FC = () => {
     textAlign: 'center',
   }
 
-  // Content style
-  const styleContent: React.CSSProperties = {
-    margin: '0',
+  // Content style when collapsed and expanded.
+  const styleContentCollapsed: React.CSSProperties = {
+    margin: '0 0 0 5rem',
+    transition: 'margin 0.2s',
+  }
+  const styleContentExpanded: React.CSSProperties = {
+    margin: '0 0 0 12.5rem',
+    transition: 'margin 0.2s',
   }
 
-
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ minHeight: '100vh' }} className="select-none">
       <Sider 
         collapsible collapsed={collapsed} 
         onCollapse={(value) => setCollapsed(value)}
@@ -75,35 +98,30 @@ const App: React.FC = () => {
         <div style={{ height: 32, margin: 16, background: 'rgba(255, 255, 255, 0.2)' }} />
 
         {/* Menu items: Dashboard, Analytics, etc. */}
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+        <Menu 
+          theme="dark" 
+          defaultSelectedKeys={['1']} 
+          mode="inline" 
+          items={items} 
+          onClick={(item) => setSelectedPage(item.key)}
+        />
       </Sider>
 
-      <Layout className="site-layout">
+      <Layout className="site-layout select-none">
         {/* Start of header */}
         <Header style={styleHeader} >
-        Portfolio Tracker ©2023 Created by Frederick Jorge
+          Portfolio Tracker ©2023 Created by Frederick Jorge
         </Header>
 
         {/* Start of main content */}
-        <Content style={styleContent}>
-
-          {/* Testing filler content */}
-          <div style={{ padding: 24, textAlign: 'center', background: "pink" }}>
-            <p>long content</p>
-            {
-              // indicates very long content
-              Array.from({ length: 100 }, (_, index) => (
-                <React.Fragment key={index}>
-                  {index % 20 === 0 && index ? 'more' : '...'}
-                  <br />
-                </React.Fragment>
-              ))
-            }
-          </div>
+        <Content style={collapsed ? styleContentCollapsed : styleContentExpanded} >
+          <MainContent selectedPage={selectedPage} />
         </Content>
         
         {/* Start of footer */}
-        <Footer style={{ textAlign: 'center', background: "orange" }}>Portfolio Tracker ©2023 Created by Frederick Jorge</Footer>
+        <Footer style={{ textAlign: 'center', background: "orange" }}>
+          Portfolio Tracker ©2023 Created by Frederick Jorge
+        </Footer>
       </Layout>
 
     </Layout>
