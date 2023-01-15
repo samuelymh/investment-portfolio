@@ -69,17 +69,6 @@ const App: React.FC = () => {
     zIndex: 1,
   }
 
-  // Header style to prevent it from scrolling with the content.
-  const styleHeader: React.CSSProperties = {
-    padding: 0,
-    background: "orange",
-    position: 'sticky', 
-    top: 0, 
-    zIndex: 0,
-    width: '100%',
-    textAlign: 'center',
-  }
-
   return (
     <Layout style={{ minHeight: '100vh'}} className="select-none">
       <Sider 
@@ -108,7 +97,7 @@ const App: React.FC = () => {
                  transition: 'margin 0.2s', }}
       >
         {/* Start of header */}
-        <Header style={styleHeader} >
+        <Header className="!bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky">
           <Clock />
         </Header>
 
@@ -118,7 +107,7 @@ const App: React.FC = () => {
         </Content>
         
         {/* Start of footer */}
-        <Footer style={{ textAlign: 'center', background: "orange" }}>
+        <Footer className='!bg-[#FFFDFA] text-center '>
           Portfolio Tracker ©2023 Created by Frederick Jorge
         </Footer>
       </Layout>
