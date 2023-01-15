@@ -18,6 +18,7 @@ const { Header, Content, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
+// Helper function to create menu items.
 function getItem(
   label: React.ReactNode,
   key: React.Key,
@@ -32,6 +33,7 @@ function getItem(
   } as MenuItem;
 }
 
+// Menu items: Dashboard, Analytics, etc.
 const items: MenuItem[] = [
   getItem('Dashboard', '1', <BarChartOutlined />),
   getItem('Analytics', '2', <DesktopOutlined />),
