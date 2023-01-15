@@ -3,7 +3,7 @@ import React from 'react';
 const Dashboard: React.FC = () => {
   return (
     <div>
-      <h1>Dashboard</h1>
+      <h1 className='text-center' >Dashboard</h1>
       {/* Testing filler content */}
       <div style={{ padding: 24, textAlign: 'center', background: "pink" }}>
         <p>long content</p>
