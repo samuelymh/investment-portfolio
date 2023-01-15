@@ -58,26 +58,15 @@ const App: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [selectedPage, setSelectedPage] = useState('1');
 
-  // Sider style to prevent it from scrolling with the content.
-  const styleSider: React.CSSProperties = {
-    overflow: 'auto',
-    height: '100vh',
-    position: 'fixed',
-    left: 0,
-    top: 0,
-    bottom: 0,
-    zIndex: 1,
-  }
-
   return (
-    <Layout style={{ minHeight: '100vh'}} className="select-none">
+    <Layout>
       <Sider 
         collapsible collapsed={collapsed} 
         onCollapse={(value) => setCollapsed(value)}
-        style={styleSider}
+        className="select-none !overflow-auto !h-screen !fixed !left-0 !inset-y-0 !z-[1]"
       >
         {/* Where app logo would go. */}
-        <div style={{ height: 32, margin: 16, background: 'rgba(255, 255, 255, 0.2)' }} />
+        <div className='h-8 m-4 bg-indigo-600' />
 
         {/* Menu items: Dashboard, Analytics, etc. */}
         <Menu 
@@ -91,13 +80,13 @@ const App: React.FC = () => {
 
       {/* Contains header, main content, and footer */}
       <Layout 
-        className="site-layout select-none"
+        className="site-layout"
         onClick={() => { if (!collapsed) setCollapsed(true) }}
         style={{ margin: collapsed ? "0 0 0 5rem" : "0 0 0 12.5rem",
-                 transition: 'margin 0.2s', }}
+                 transition: 'margin 0.21s', }}
       >
         {/* Start of header */}
-        <Header className="!bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky">
+        <Header className="!bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky select-none">
           <Clock />
         </Header>
 
