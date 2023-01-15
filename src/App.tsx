@@ -12,6 +12,7 @@ import { Layout, Menu } from 'antd';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Analytics from './Components/Analytics/Analytics';
 import Transactions from './Components/Transactions/Transactions';
+import Clock from './Components/Clock/Clock';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -77,16 +78,6 @@ const App: React.FC = () => {
     textAlign: 'center',
   }
 
-  // Content style when collapsed and expanded.
-  const styleContentCollapsed: React.CSSProperties = {
-    margin: '0 0 0 5rem',
-    transition: 'margin 0.2s',
-  }
-  const styleContentExpanded: React.CSSProperties = {
-    margin: '0 0 0 12.5rem',
-    transition: 'margin 0.2s',
-  }
-
   return (
     <Layout style={{ minHeight: '100vh'}} className="select-none">
       <Sider 
@@ -107,17 +98,20 @@ const App: React.FC = () => {
         />
       </Sider>
 
+      {/* Contains header, main content, and footer */}
       <Layout 
         className="site-layout select-none"
         onClick={() => { if (!collapsed) setCollapsed(true) }}
+        style={{ margin: collapsed ? "0 0 0 5rem" : "0 0 0 12.5rem",
+                 transition: 'margin 0.2s', }}
       >
         {/* Start of header */}
         <Header style={styleHeader} >
-          Portfolio Tracker ©2023 Created by Frederick Jorge
+          <Clock />
         </Header>
 
         {/* Start of main content */}
-        <Content style={collapsed ? styleContentCollapsed : styleContentExpanded} >
+        <Content>
           <MainContent selectedPage={selectedPage} />
         </Content>
         
