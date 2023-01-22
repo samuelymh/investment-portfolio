@@ -13,6 +13,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Analytics from './Components/Analytics/Analytics';
 import Transactions from './Components/Transactions/Transactions';
 import Clock from './Components/Clock/Clock';
+import Profile from './Components/Profile/Profile';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -86,8 +87,9 @@ const App: React.FC = () => {
                  transition: 'margin 0.21s', }}
       >
         {/* Start of header */}
-        <Header className="flex !bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky select-none text-xl">
+        <Header className="flex justify-between !bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky select-none text-xl">
           <Clock />
+          <Profile />
         </Header>
 
         {/* Start of main content */}
