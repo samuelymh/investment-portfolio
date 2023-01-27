@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Dashboard: React.FC = () => {
+const Dashboard: React.FC<{ classes: string }> = ({ classes }) => {
   return (
-    <div>
-      <h1 className='text-center' >Dashboard</h1>
+    <div className={classes}>
+      <h1 className='text-center'>Dashboard</h1>
       {/* Testing filler content */}
       <div style={{ padding: 24, textAlign: 'center', background: "pink" }}>
         <p>long content</p>

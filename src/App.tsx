@@ -41,17 +41,17 @@ const items: MenuItem[] = [
   getItem('Transactions', '3', <WalletOutlined />),
 ];
 
-const MainContent: React.FC< { selectedPage: string } > = ({ selectedPage }) => {
+const MainContent: React.FC< { selectedPage: string, className: string } > = ({ selectedPage, className }) => {
   console.log(selectedPage);
   switch (selectedPage) {
     case '1':
-      return <Dashboard />;
+      return <Dashboard classes={className} />;
     case '2':
-      return <Analytics />;
+      return <Analytics classes={className} />;
     case '3':
-      return <Transactions />;
+      return <Transactions classes={className} />;
     default:
-      return <Dashboard />;
+      return <Dashboard classes={className} />;
   }
 }
 
@@ -94,7 +94,10 @@ const App: React.FC = () => {
 
         {/* Start of main content */}
         <Content>
-          <MainContent selectedPage={selectedPage} />
+          <MainContent 
+            selectedPage={selectedPage} 
+            className="!bg-[#FFFDFA] text-lg" 
+          />
         </Content>
         
         {/* Start of footer */}

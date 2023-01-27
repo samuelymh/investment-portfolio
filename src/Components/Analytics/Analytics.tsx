@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Analytics: React.FC = () => {
+const Analytics: React.FC<{ classes: string }> = ({ classes }) => {
   return (
-    <div>
+    <div className={classes}>
       <h1 className='text-center'>Analytics</h1>
       {/* Testing filler content */}
       <div style={{ padding: 24, textAlign: 'center', background: "pink" }}>

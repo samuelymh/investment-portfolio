@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Transactions: React.FC = () => {
+const Transactions: React.FC<{ classes: string }> = ({ classes })=> {
   return (
-    <div>
+    <div className={classes}>
       <h1 className='text-center' >Transactions</h1>
       {/* Testing filler content */}
       <div style={{ padding: 24, textAlign: 'center', background: "pink" }}>
