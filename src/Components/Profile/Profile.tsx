@@ -18,14 +18,27 @@ const Profile: React.FC = () => {
     {
       key: "1",
       label: "Settings",
-      icon: <SettingOutlined />
+      icon: <SettingOutlined />,
+      onClick: () => goSettings(),
     },
     {
       key: "2",
       label: "Logout",
-      icon: <LogoutOutlined />
+      icon: <LogoutOutlined />,
+      onClick: () => goLogout(),
     }
   ];
+
+  // TODO: Implement goSettings and goLogout functions
+  // Updates page to display settings
+  const goSettings = () => {
+    console.log('Settings');
+  };
+
+  // Logs out user and redirects to login page
+  const goLogout = () => {
+    console.log('Logout');
+  };
 
   return (
     <div className='h-full flex items-center'>
@@ -40,15 +53,12 @@ const Profile: React.FC = () => {
 
       <div>
         {/* Dropdown to access settings and logout button */}
-        <Dropdown menu={{ items }} placement="bottom" arrow
-          className=''
-        >
-          <div>
-            <Avatar
-              className='flex justify-center items-center'
-              size="large" 
-              icon={<UserOutlined className=''/>} />
-          </div>
+        <Dropdown menu={{ items }}>
+          <Avatar
+            className='flex justify-center items-center'
+            size="large" 
+            icon={<UserOutlined />} 
+          />
         </Dropdown>
       </div>
     </div>
