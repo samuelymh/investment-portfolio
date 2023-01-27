@@ -10,6 +10,8 @@ import {
 } from "@ant-design/icons";
 
 const Profile: React.FC = () => {
+  // TODO: Implement handleChange function
+  // Updates page to display data of selected portfolio
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
