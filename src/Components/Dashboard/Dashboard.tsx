@@ -7,13 +7,13 @@ import {
 
 const Dashboard: React.FC<{ classes: string }> = ({ classes }) => {
 
-  const classNameContainer = "box-border border-black border-2 p-3 w-1/5";
+  const classNameContainer = "box-border border-black border-2 p-3 w-1/5 min-w-[300px]";
 
   return (
     <div className={classes}>
       <h1 className='text-center'>Dashboard</h1><br/>
 
-      <div className='flex justify-around px-20'>
+      <div className='flex flex-wrap justify-around px-20'>
         {/* Displays NLV and total invested. */}
         <div className={classNameContainer}>
           <p className='text-base'>Value</p>
