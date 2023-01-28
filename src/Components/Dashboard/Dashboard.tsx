@@ -23,14 +23,14 @@ const Dashboard: React.FC<{ classes: string }> = ({ classes }) => {
 
         {/* Displays cash remaining in both number and percentage. */}
         <div className={classNameContainer}>
-          <p>Cash Remaining</p>
+          <p className='text-base'>Cash Remaining</p>
           <p className='text-xl font-medium'>$34,460.80</p>
           <p className='text-lg'>20.60% unallocated</p>
         </div>
 
         {/* Displays YTD and day's returns in number and percentage.*/}
         <div className={classNameContainer}>
-          <p>Returns</p>
+          <p className='text-base'>Returns</p>
           <p className='text-xl font-medium'>
             +$23,042
             <span className='text-base text-green-600'>
@@ -49,7 +49,7 @@ const Dashboard: React.FC<{ classes: string }> = ({ classes }) => {
 
         {/* Displays yield(%) relative to total invested and in number.*/}
         <div className={classNameContainer}>
-          <p>Dividends</p>
+          <p className='text-base'>Dividends</p>
           <p className='text-xl font-medium'>
             1.8%
             <span className='text-base text-green-600'>
