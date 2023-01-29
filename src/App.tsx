@@ -87,7 +87,7 @@ const App: React.FC = () => {
                  transition: 'margin 0.21s', }}
       >
         {/* Start of header */}
-        <Header className="flex justify-between !bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky select-none text-xl">
+        <Header className="flex justify-evenly sm:justify-between !bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky select-none text-xl">
           <Clock />
           <Profile />
         </Header>

@@ -21,12 +21,14 @@ const Clock: React.FC = () => {
   }, 1000);
 
   return (
-    <Tooltip placement='right' title={new Date().toDateString()}>
-      <div className='flex text-black items-center font-normal'>
-        <BellOutlined className='align-middle'/>
-        <span className='align-middle clockValue ml-1'></span>
-      </div>
-    </Tooltip>
+    <div className='hidden sm:block'>
+      <Tooltip placement='right' title={new Date().toDateString()}>
+        <div className='flex text-black items-center font-normal'>
+          <BellOutlined className='align-middle'/>
+          <span className='align-middle clockValue ml-1'></span>
+        </div>
+      </Tooltip>
+    </div>
   );
 };
 
