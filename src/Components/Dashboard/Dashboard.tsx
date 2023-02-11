@@ -1,4 +1,5 @@
 import React from 'react';
+import PortfolioChart from '../PortfolioChart/PortfolioChart';
 
 import {
   CaretUpOutlined,
@@ -61,6 +62,9 @@ const Dashboard: React.FC<{ classes: string }> = ({ classes }) => {
         </div>
       </div>
       <br/>
+
+      {/* Portfolio allocation displayed in donut chart */}
+      <PortfolioChart />
 
       {/* Testing filler content */}
       <div style={{ padding: 24, textAlign: 'center', background: "pink" }}>
