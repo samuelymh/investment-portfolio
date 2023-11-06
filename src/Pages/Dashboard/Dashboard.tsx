@@ -1,5 +1,5 @@
 import React from 'react';
-import PortfolioChart from '../PortfolioChart/PortfolioChart';
+import PortfolioChart from '../../Components/PortfolioChart/PortfolioChart';
 
 import {
   CaretUpOutlined,

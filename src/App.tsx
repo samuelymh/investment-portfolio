@@ -9,9 +9,9 @@ import {
 import type { MenuProps } from 'antd';
 import { Layout, Menu } from 'antd';
 
-import Dashboard from './Components/Dashboard/Dashboard';
-import Analytics from './Components/Analytics/Analytics';
-import Transactions from './Components/Transactions/Transactions';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Analytics from './Pages/Analytics/Analytics';
+import Transactions from './Pages/Transactions/Transactions';
 import Clock from './Components/Clock/Clock';
 import Profile from './Components/Profile/Profile';
 
