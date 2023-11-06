@@ -7,7 +7,7 @@ const Clock: React.FC = () => {
     const clockValue = document.querySelector('.clockValue')!;
     clockValue.innerHTML = time;
   }
-  
+
 
   setInterval(() => {
     const date = new Date();
@@ -24,7 +24,7 @@ const Clock: React.FC = () => {
     <div className='hidden sm:block'>
       <Tooltip placement='right' title={new Date().toDateString()}>
         <div className='flex text-black items-center font-normal'>
-          <BellOutlined className='align-middle'/>
+          <BellOutlined className='align-middle' />
           <span className='align-middle clockValue ml-1'></span>
         </div>
       </Tooltip>

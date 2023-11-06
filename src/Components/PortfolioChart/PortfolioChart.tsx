@@ -11,7 +11,7 @@ const PortfolioChart: React.FC = () => {
     ["JNJ", 20852.32],
     ["META", 25838.88],
   ];
-  
+
   const options = {
     title: "Portfolio Allocation",
     pieHole: 0.4,

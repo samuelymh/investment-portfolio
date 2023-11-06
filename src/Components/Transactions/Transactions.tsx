@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Transactions: React.FC<{ classes: string }> = ({ classes })=> {
+const Transactions: React.FC<{ classes: string }> = ({ classes }) => {
   return (
     <div className={classes}>
       <h1 className='text-center' >Transactions</h1>

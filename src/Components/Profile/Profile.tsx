@@ -48,8 +48,10 @@ const Profile: React.FC = () => {
       <Select
         className='mr-2 !w-32 align-middle'
         defaultValue="Portfolio 1"
-        options={[{ value: 'portfolio1', label: 'Portfolio 1'},
-                  { value: 'portfolio2', label: 'Portfolio 2'}]}
+        options={[
+          { value: 'portfolio1', label: 'Portfolio 1' },
+          { value: 'portfolio2', label: 'Portfolio 2' }
+        ]}
         onChange={handleChange}
       />
 
@@ -58,8 +60,8 @@ const Profile: React.FC = () => {
         <Dropdown menu={{ items }}>
           <Avatar
             className='flex justify-center items-center'
-            size="large" 
-            icon={<UserOutlined />} 
+            size="large"
+            icon={<UserOutlined />}
           />
         </Dropdown>
       </div>

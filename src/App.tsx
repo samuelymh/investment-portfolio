@@ -41,7 +41,7 @@ const items: MenuItem[] = [
   getItem('Transactions', '3', <WalletOutlined />),
 ];
 
-const MainContent: React.FC< { selectedPage: string, className: string } > = ({ selectedPage, className }) => {
+const MainContent: React.FC<{ selectedPage: string, className: string }> = ({ selectedPage, className }) => {
   console.log(selectedPage);
   switch (selectedPage) {
     case '1':
@@ -61,8 +61,8 @@ const App: React.FC = () => {
 
   return (
     <Layout>
-      <Sider 
-        collapsible collapsed={collapsed} 
+      <Sider
+        collapsible collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
         className="select-none !overflow-auto !h-screen !fixed !left-0 !inset-y-0 !z-[1]"
       >
@@ -70,21 +70,23 @@ const App: React.FC = () => {
         <div className='h-8 m-4 bg-indigo-600' />
 
         {/* Menu items: Dashboard, Analytics, etc. */}
-        <Menu 
-          theme="dark" 
-          defaultSelectedKeys={['1']} 
-          mode="inline" 
-          items={items} 
+        <Menu
+          theme="dark"
+          defaultSelectedKeys={['1']}
+          mode="inline"
+          items={items}
           onClick={(item) => setSelectedPage(item.key)}
         />
       </Sider>
 
       {/* Contains header, main content, and footer */}
-      <Layout 
+      <Layout
         className="site-layout"
         onClick={() => { if (!collapsed) setCollapsed(true) }}
-        style={{ margin: collapsed ? "0 0 0 5rem" : "0 0 0 12.5rem",
-                 transition: 'margin 0.21s', }}
+        style={{
+          margin: collapsed ? "0 0 0 5rem" : "0 0 0 12.5rem",
+          transition: 'margin 0.21s',
+        }}
       >
         {/* Start of header */}
         <Header className="flex justify-evenly sm:justify-between !bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky select-none text-xl">
@@ -94,12 +96,12 @@ const App: React.FC = () => {
 
         {/* Start of main content */}
         <Content>
-          <MainContent 
-            selectedPage={selectedPage} 
-            className="!bg-[#FFFDFA] text-lg" 
+          <MainContent
+            selectedPage={selectedPage}
+            className="!bg-[#FFFDFA] text-lg"
           />
         </Content>
-        
+
         {/* Start of footer */}
         <Footer className='!bg-[#FFFDFA] text-center '>
           Portfolio Tracker ©2023 Created by Frederick Jorge
