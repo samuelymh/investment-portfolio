@@ -62,8 +62,6 @@ const App: React.FC = () => {
   return (
     <Layout>
       <Sider
-        collapsible collapsed={collapsed}
-        onCollapse={(value) => setCollapsed(value)}
         className="select-none !overflow-auto !h-screen !fixed !left-0 !inset-y-0 !z-[1]"
       >
         {/* Where app logo would go. */}
@@ -81,12 +79,8 @@ const App: React.FC = () => {
 
       {/* Contains header, main content, and footer */}
       <Layout
-        className="site-layout"
+        className="site-layout my-0 mr-0 ml-[12.5rem]"
         onClick={() => { if (!collapsed) setCollapsed(true) }}
-        style={{
-          margin: collapsed ? "0 0 0 5rem" : "0 0 0 12.5rem",
-          transition: 'margin 0.21s',
-        }}
       >
         {/* Start of header */}
         <Header className="flex justify-evenly sm:justify-between !bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky select-none text-xl">
