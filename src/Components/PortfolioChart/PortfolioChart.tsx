@@ -28,14 +28,6 @@ const PortfolioChart: React.FC = () => {
         data={data}
         options={options}
       />
-      <Chart
-        className="bg-pink-100 text-center !font-mono"
-        chartType="PieChart"
-        width="100%"
-        height="400px"
-        data={data}
-        options={options}
-      />
     </div>
   );
 };
