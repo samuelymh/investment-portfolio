@@ -56,7 +56,6 @@ const MainContent: React.FC<{ selectedPage: string, className: string }> = ({ se
 }
 
 const App: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
   const [selectedPage, setSelectedPage] = useState('1');
 
   return (
@@ -78,10 +77,7 @@ const App: React.FC = () => {
       </Sider>
 
       {/* Contains header, main content, and footer */}
-      <Layout
-        className="site-layout my-0 mr-0 ml-[12.5rem]"
-        onClick={() => { if (!collapsed) setCollapsed(true) }}
-      >
+      <Layout className="site-layout my-0 mr-0 ml-[12.5rem]">
         {/* Start of header */}
         <Header className="flex justify-evenly sm:justify-between !bg-[#FFFDFA] p-0 top-0 z-0 w-full text-center sticky select-none text-xl">
           <Clock />
@@ -98,7 +94,7 @@ const App: React.FC = () => {
 
         {/* Start of footer */}
         <Footer className='!bg-[#FFFDFA] text-center '>
-          Portfolio Tracker ©2023 Created by Frederick Jorge
+          Portfolio Tracker ©2023 Created by Samuel Yau
         </Footer>
       </Layout>
 
