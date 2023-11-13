@@ -60,9 +60,7 @@ const App: React.FC = () => {
 
   return (
     <Layout>
-      <Sider
-        className="select-none !overflow-auto !h-screen !fixed !left-0 !inset-y-0 !z-[1]"
-      >
+      <Sider className="select-none !overflow-auto !h-screen !fixed !left-0 !inset-y-0 !z-[1]">
         {/* Where app logo would go. */}
         <div className='h-8 m-4 bg-indigo-600' />
 

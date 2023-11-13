@@ -82,7 +82,7 @@ const Dashboard: React.FC<{ classes: string }> = ({ classes }) => {
       <PortfolioChart />
 
       {/* TradingView chart to display YTD gains on line chart */}
-      <TVChart data={initialData}/>
+      <TVChart data={initialData} />
 
       {/* Testing filler content */}
       <div style={{ padding: 24, textAlign: 'center', background: "pink" }}>
