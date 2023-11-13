@@ -1,5 +1,6 @@
 import React from 'react';
 import PortfolioChart from '../../Components/PortfolioChart/PortfolioChart';
+import { TVChart } from '../../Components/TVChart/TVChart';
 
 import {
   CaretUpOutlined,
@@ -7,6 +8,20 @@ import {
 } from '@ant-design/icons';
 
 const Dashboard: React.FC<{ classes: string }> = ({ classes }) => {
+
+  // Data to put into tradingview chart
+  const initialData = [
+    { time: '2018-12-22', value: 32.51 },
+    { time: '2018-12-23', value: 31.11 },
+    { time: '2018-12-24', value: 27.02 },
+    { time: '2018-12-25', value: 27.32 },
+    { time: '2018-12-26', value: 25.17 },
+    { time: '2018-12-27', value: 28.89 },
+    { time: '2018-12-28', value: 25.46 },
+    { time: '2018-12-29', value: 23.92 },
+    { time: '2018-12-30', value: 22.68 },
+    { time: '2018-12-31', value: 22.67 },
+  ];
 
   const classNameContainer = "box-border border-black border-2 p-3 w-1/5 min-w-[300px]";
 
@@ -65,6 +80,9 @@ const Dashboard: React.FC<{ classes: string }> = ({ classes }) => {
 
       {/* Portfolio allocation displayed in donut chart */}
       <PortfolioChart />
+
+      {/* TradingView chart to display YTD gains on line chart */}
+      <TVChart data={initialData}/>
 
       {/* Testing filler content */}
       <div style={{ padding: 24, textAlign: 'center', background: "pink" }}>
